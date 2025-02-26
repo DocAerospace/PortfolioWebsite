@@ -1,0 +1,258 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P';
+    overflow: hidden;
+}
+
+body {
+    background-color: #1e1e1e; 
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.theText{
+    font-size: 2rem;
+    text-align: center;
+    margin-left: 3%;
+    margin-right: 5%;   
+    animation: fadeIn 1s ease-in-out;
+    perspective: 1000px;
+}
+
+.flashlight {
+    position: absolute;
+    width: 00px; 
+    height: 00px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.8); 
+    transition: transform 0.3s ease-out;
+}
+
+
+
+
+.mapContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    transition: opacity 1s ease-in-out;
+}
+
+.map {
+    position: relative;
+    width: 75%;
+    height: 75%;
+    margin-left: 15%;
+    margin-top: 10%;
+    background-image: url('mapog.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    animation: fadeInMap 2s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+
+
+.icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    left: 50px;
+    cursor: pointer;
+    transform: rotate(45deg);
+    transition: background-color 0.5s ease;
+    z-index: 10;
+}
+
+.icon:before, .icon:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translate(-50%, -50%);
+    background-color: #ff6347; 
+    border-radius: 50% 50% 0 50%;
+    mask: radial-gradient(circle 8px at 50% 50%, #0000 94%, #000);
+}
+
+
+.icon:after{
+    animation: pulsing 1s infinite;
+    transform: perspective(300px) translateZ(0px);
+    top: -30px; 
+    left: -30px;
+    width: 60px;
+    height: 60px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.icon:hover:after {
+    animation: none; 
+    width: 0; 
+    height: 0; 
+}
+
+
+
+.icon:hover {
+    transform: rotate(45deg) scale(1.3);
+}
+
+
+/*tooltip to handle the text for the locations*/
+.tooltip {
+    position: absolute;
+    top: -40px; 
+    left: 40%;
+    transform: translateX(-80%);
+    background: #333333;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    scale: 1;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translate(-50%, -10px);
+    transition: opacity 0.1s ease, transform 0s ease;
+    pointer-events: none; 
+    z-index: 20;
+    animation: throb 1.5s infinite ease-in-out;
+}
+
+.icon:hover .tooltip {
+    opacity: 1;
+    transform: translate(-50%, -50px) rotate(-45deg) scale(1);
+}
+
+
+/*position of the icons*/
+#aboutIcon { top: 20%; left: 10%; }
+#projectsIcon { top: 55%; left: 50%; }
+#contactIcon { top: 35%; left: 80%; }
+
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 1rem 0;
+    font-size: 0.65rem;
+    z-index: -2;
+}
+
+.copyright {
+    letter-spacing: 0.1px;
+}
+
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeInMap {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes pulsing {
+    to {
+        transform: perspective(300px) translateZ(50px);
+        opacity: 0;
+    }
+}
+
+
+@keyframes throb {
+    0% {
+        transform: scale(1) rotate(-45deg);
+        left: 40%;
+    }
+    50% {
+        transform: scale(1.1) rotate(-45deg);
+        left: 40%;
+    }
+    100% {
+        transform: scale(1) rotate(-45deg);
+        left: 40%;
+    }
+}
+
+
+
+
+
+.transition {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: #000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1); 
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.transition.active {
+    opacity: 1;
+    animation: scaleIn 1s forwards, scaleOut 1s 1.5s forwards;
+}
+
+@keyframes scaleOut {
+    0% {
+        transform: translate(-50%, -50%) scale(1); 
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0); 
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0); 
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); 
+    }
+}
+
+
+
+
+
+
+
+
+

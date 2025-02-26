@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <title>Let's Connect | Michael Alamina</title>
+    <link rel="stylesheet" href="contactme.css">
+</head>
+<div class="flashlight"></div>
+<body>
+    <div class="messageText">
+        <h1 class="mainLetters">TEAM UP!</h1>
+    </div>
+    <p class="subLetters">Wanna get in touch, collab on a project or just chat? Fill the form and smash that big button! </p>
+    <div class="formContainer">
+        <form id="contactMeForm">
+            <div class="inputGroup">
+                <input type="text" id="name" name="name" placeholder="" required>
+                <label for="name">Full Name</label>
+                <span class="underline"></span>
+            </div>
+            <div class="inputGroup">
+                <textarea id="message" name="message" placeholder="" required></textarea>
+                <label for="message">Your Message</label>
+                <span class="underline"></span>
+            </div>
+            <div id="formMessage"></div>
+
+            <button type="submit" class="submitBtn">SEND</button>
+        </form>
+    </div>
+
+    <!-- <button type="submit" class="submitBtn">SEND</button> -->
+
+    <div class="optionsContainer">
+        <div class="arrowContainer">
+            <div class="moreText">More Options</div>
+        </div>
+        <div class="iconsContainer">
+            <a href="mailto:michaelalamina150@gmail.com" class="iconLink">
+                <img src="gmail.png" alt="Gmail">
+            </a>
+            <a href="https://www.linkedin.com/in/michael-alamina-312a332b9/" class="iconLink">
+                <img src="linkedinone.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/DocAerospace" class="iconLink">
+                <img src="githubone (3).png" alt="GitHub">
+            </a>
+        </div>
+    </div>
+    <div class= "backButton">
+        <a href="main.html">
+            <div class="icon" id="backIcon">
+                <div class="tooltip">Home</div>
+            </div>
+        </a>
+    </div>
+
+    <footer class="footerone">
+        <span class="copyright">Copyright©. 2024 MICHAEL ALAMINA. All Rights Reserved</span>
+    </footer>
+    <script src="contactme.js"></script>
+    <div class="transition"></div>
+</body>
+</html>
