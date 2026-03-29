@@ -45,22 +45,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 6000);
 
 
-    form.addEventListener('submit', function(event) {
-        //event.preventDefault();
-        const name = document.querySelector('name').value;
-        const message = document.querySelector('message').value;
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault(); // prevent reload
 
-        if (name === '' || message === '') {
+        const name = document.getElementById('name').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !message) {
             formMessage.textContent = 'Empty fields';
-            setTimeout(() => {
-                formMessage.textContent = '';
-            }, 2000);
-        } else {
-            formMessage.textContent = 'Sent!';
-            setTimeout(() => {
-                formMessage.textContent = '';
-            }, 2000);
-            // form.reset();
+            setTimeout(() => (formMessage.textContent = ''), 2000);
+            return;
+        }
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert("Form submitted");
+                form.reset();
+                formMessage.textContent = 'Sent!';
+                setTimeout(() => (formMessage.textContent = ''), 2000);
+            } else {
+                alert("Error sending form. Try again.");
+            }
+        } catch (error) {
+            alert("Something went wrong.");
+            console.error(error);
         }
     });
 
