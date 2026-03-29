@@ -186,34 +186,32 @@ body {
     width: 100%;
 }
 
+/* Resize title for phones */
 @media (max-width: 600px) {
-
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding-top: 0;
+    .introText h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
     }
 
-    .container {
-        position: relative;
-        top: 0;
-        transform: translateY(0);
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .introText {
-        text-align: center;
-        width: 100%;
+    .introText p {
+        font-size: 0.8rem;
+        white-space: normal;
+        border-right: none;
     }
 
     .enterButton {
-        margin-top: 1.5rem;
-        align-self: center;
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+    }
+
+    .pixel {
+        width: 8px;
+        height: 8px;
+    }
+
+    footer {
+        font-size: 0.55rem;
+        padding: 0.5rem 0;
     }
 }
 
