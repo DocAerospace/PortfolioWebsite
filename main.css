@@ -250,6 +250,71 @@ footer {
 
 
 
+@media (max-width: 600px) {
+
+    /* Allow scrolling + center layout */
+    html, body {
+        overflow: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    /* Title centered and resized */
+    .theText {
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Map expands and centers on phone */
+    .mapContainer {
+        width: 100%;
+        height: auto;
+        margin-top: 1rem;
+    }
+
+    .map {
+        width: 100%;
+        height: 60vh;
+        margin: 0 auto;
+        background-size: contain;
+        background-position: center;
+    }
+
+    /* Icons resize + reposition for mobile */
+    .icon {
+        width: 25px;
+        height: 25px;
+        transform: rotate(45deg);
+    }
+
+    #aboutIcon { top: 25%; left: 15%; }
+    #projectsIcon { top: 55%; left: 50%; }
+    #contactIcon { top: 40%; left: 75%; }
+
+    /* Tooltips simplified on mobile */
+    .tooltip {
+        top: -30px;
+        font-size: 0.65rem;
+        transform: translateX(-50%);
+    }
+
+    footer {
+        font-size: 0.55rem;
+        padding: 0.5rem 0;
+        text-align: center;
+    }
+}
+
+
+
 
 
 
