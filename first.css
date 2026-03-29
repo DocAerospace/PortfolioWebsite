@@ -173,18 +173,18 @@ body {
 
 
 /* Allow scrolling on phones */
-body {
+/* body {
     overflow: auto;
     height: auto;
     padding: 2rem 1rem;
-}
+} */
 
 /* Make container centered and not cut off */
-.container {
+/* .container {
     position: relative;
     padding: 20px;
     width: 100%;
-}
+} */
 
 /* Resize title for phones */
 /* @media (max-width: 600px) {
