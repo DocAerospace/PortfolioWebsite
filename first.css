@@ -172,6 +172,51 @@ body {
 
 
 
+/* Allow scrolling on phones */
+body {
+    overflow: auto;
+    height: auto;
+    padding: 2rem 1rem;
+}
+
+/* Make container centered and not cut off */
+.container {
+    position: relative;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Resize title for phones */
+@media (max-width: 600px) {
+    .introText h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .introText p {
+        font-size: 0.8rem;
+        white-space: normal;
+        border-right: none;
+    }
+
+    .enterButton {
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+    }
+
+    .pixel {
+        width: 8px;
+        height: 8px;
+    }
+
+    footer {
+        font-size: 0.55rem;
+        padding: 0.5rem 0;
+    }
+}
+
+
+
 
 footer {
     position: fixed;
