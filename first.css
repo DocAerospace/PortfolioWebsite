@@ -187,7 +187,7 @@ body {
 }
 
 /* Resize title for phones */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .introText h1 {
         font-size: 2.2rem;
         margin-bottom: 1.5rem;
@@ -213,7 +213,7 @@ body {
         font-size: 0.55rem;
         padding: 0.5rem 0;
     }
-}
+} */
 
 
 
